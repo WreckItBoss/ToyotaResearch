@@ -2,10 +2,8 @@ import openai
 from dotenv import load_dotenv
 import os
 
-# Load environment variables from .env file
 load_dotenv()
 
-# Get your OpenAI API key from the .env file
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Create a chat completion
