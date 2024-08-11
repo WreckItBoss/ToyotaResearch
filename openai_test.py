@@ -1,19 +1,42 @@
-import openai
-from dotenv import load_dotenv
 import os
+import requests
+from dotenv import load_dotenv
 
+# Load environment variables from .env file
 load_dotenv()
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# Initialize the API key from the .env file
+api_key = os.getenv("OPENAI_API_KEY")
 
-# Create a chat completion
-completion = openai.ChatCompletion.create(
-  model="gpt-4",
-  messages=[
-    {"role": "system", "content": "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."},
-    {"role": "user", "content": "Compose a poem that explains the concept of recursion in programming."}
-  ]
-)
+# Define the headers, including the authorization with the API key
+headers = {
+    "Authorization": f"Bearer {api_key}",
+    "Content-Type": "application/json"
+}
 
-# Print the generated poem
-print(completion['choices'][0]['message']['content'])
+# Define the payload with the model and message you want to send
+payload = {
+    "model": "gpt-4",
+    "messages": [
+        {
+            "role": "user",
+            "content": "Say this is a test",
+        }
+    ]
+}
+
+# Send the POST request to the OpenAI API
+response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+
+# Parse the JSON response
+chat_completion = response.json()
+
+# Extract the content you want to save
+output_content = chat_completion['choices'][0]['message']['content']
+
+# Save the output to a separate file
+with open("output.txt", "w") as file:
+    file.write(output_content)
+
+# Optional: print a confirmation message
+print("Output saved to output.txt")
