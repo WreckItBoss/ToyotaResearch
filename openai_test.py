@@ -1,42 +1,65 @@
-import os
+import base64
 import requests
+import os
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
+# Load environment variables from .env file (if you're storing the API key in a .env file)
 load_dotenv()
 
-# Initialize the API key from the .env file
-api_key = os.getenv("OPENAI_API_KEY")
+# OpenAI API Key from .env or hardcoded
+api_key = os.getenv("OPENAI_API_KEY") or "YOUR_OPENAI_API_KEY"
 
-# Define the headers, including the authorization with the API key
+# Function to encode the image
+def encode_image(image_path):
+    with open(image_path, "rb") as image_file:
+        return base64.b64encode(image_file.read()).decode('utf-8')
+
+# Path to your image
+image_path = "testone.PNG"
+
+# Getting the base64 string
+base64_image = encode_image(image_path)
+
+# Headers for the API request
 headers = {
-    "Authorization": f"Bearer {api_key}",
-    "Content-Type": "application/json"
+    "Content-Type": "application/json",
+    "Authorization": f"Bearer {api_key}"
 }
 
-# Define the payload with the model and message you want to send
+# Payload for the API request
 payload = {
-    "model": "gpt-4",
+    "model": "gpt-4o",
     "messages": [
         {
             "role": "user",
-            "content": "Say this is a test",
+            "content": [
+                {
+                    "type": "text",
+                    "text": "Tell me about this image"
+                },
+                {
+                    "type": "image_url",
+                    "image_url": {
+                        "url": f"data:image/jpeg;base64,{base64_image}"
+                    }
+                }
+            ]
         }
-    ]
+    ],
 }
 
 # Send the POST request to the OpenAI API
 response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
 
 # Parse the JSON response
-chat_completion = response.json()
+response_json = response.json()
 
 # Extract the content you want to save
-output_content = chat_completion['choices'][0]['message']['content']
+content = response_json['choices'][0]['message']['content']
 
 # Save the output to a separate file
-with open("output.txt", "w") as file:
-    file.write(output_content)
+with open("image_analysis_output.txt", "w") as file:
+    file.write(content) 
 
 # Optional: print a confirmation message
-print("Output saved to output.txt")
+print("Output saved to image_analysis_output.txt")
