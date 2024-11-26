@@ -1,0 +1,8 @@
+{
+    "Subject": "Dermatology",
+    "Data": "Medical Imaging Dataset",
+    "Data Subject": "Medical Imaging",
+    "Data Type": "Image Data",
+    "Metadata": "This dataset focuses on identifying histologically-confirmed malignant skin lesions from benign ones using AI algorithms. The dataset consists of diagnostically labeled JPEG images and an associated CSV file containing binary diagnostic labels (0: benign, 1: malignant), input variables like age, sex, and lesion location, as well as additional metadata like lesion diagnosis and mitotic index for melanomas. The images are cropped from 3D total body photography (TBP) taken with the Vectra WB360 product, which captures the entire cutaneous surface of patients. The dataset spans lesions from thousands of patients across nine institutions and three continents, collected between 2015 and 2024. The dataset includes strong and weakly labeled tiles, where strong labels are based on histopathology, and weak labels are derived from visual assessments.",
+    "Reference": "ISIC 2024 - Skin Cancer Detection with 3D-TBP"
+}

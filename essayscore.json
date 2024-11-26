@@ -1,0 +1,7 @@
+{
+    "Subject": "NLP Modeling",
+    "Data Subject": "NLP, Essay Scoring",
+    "Data Type": "Text Data",
+    "Metadata": "This dataset consists of approximately 24,000 argumentative essays written by students. Each essay has been scored on a holistic scale ranging from 1 to 6, based on a provided scoring rubric. The primary goal of the dataset is to enable the development of models that can predict the holistic score of an essay solely from its text. It has approximately 8,000 observations. The training file provides the essay ID, the content and the score of the essay.",
+    "Reference": "Essay Scoring Competition"
+}

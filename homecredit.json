@@ -1,0 +1,8 @@
+{
+"Subject": "Finance",
+"Data": "Home Credit Data",
+"Data Subject": "Financial Data",
+"Data Type": "Structured Data",
+"Metadata": "This dataset is used to predict client defaults based on both internal and external data sources, aiming to create models that balance accuracy with prediction stability across different test data ranges. The dataset includes static features, application histories, tax registries, credit bureau records, and deposit information, organized by varying levels of data depth. The dataset also features several transformations of predictor data, indicated by codes such as P, A, and D, which correspond to transformations such as days past due or amount adjustments. ",
+"Reference": "Home Credit - Credit Risk Model Stability"
+}

@@ -1,0 +1,1 @@
+This dataset serves the purpose of developing and refining NLP models, specifically for essay scoring. By utilizing methods such as pre-training, fine-tuning, pseudo-labelling, and ensembling, the goal is to predict numerical scores for argumentative essays, enhancing automation and uniformity in evaluation processes.

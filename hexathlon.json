@@ -1,0 +1,8 @@
+{
+    "Subject": "Computer Vision",
+    "Data": "Image Matching dataset",
+    "Data Subject": "Computer Vision",
+    "Data Type": "Image Data",
+    "Metadata": "This dataset is designed to solve the challenge of building accurate 3D models from unstructured image collections taken from various angles and conditions. It focuses on six categories such as phototourism, aerial views, repeated structures, and natural environments. The dataset includes image batches, 3D reconstructions (viewable via COLMAP), and ground truth data with rotation matrices and translation vectors for each image. It also contains metadata for image positioning.",
+    "Reference": "Image Matching Challenge 2024 - Hexathlon"
+}

@@ -1,0 +1,8 @@
+{
+    "Subject": "Climate Science",
+    "Data": "Climate Data",
+    "Data Subject": "Climate Simulation Data",
+    "Data Type": "Numerical Data",
+    "Metadata": "This dataset is generated using the E3SM-MMF climate model and is designed to simulate small-scale atmospheric processes such as clouds, storms, turbulence, and radiation, which influence large-scale climate patterns. This dataset includes both training and test data and aims to support the development of machine learning models that can emulate the outputs of cloud-resolving models (CRM. The training data file consists of 556 columns, representing 25 input variables, such as temperature, precipitation, and radiation, and 368 target variables spanning 60 vertical levels in the atmosphere, with lower numbers representing higher positions in the atmosphere.",
+    "Reference": "LEAP - Atmospheric Physics using AI (ClimSim)"
+}
